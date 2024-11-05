@@ -1,38 +1,112 @@
 <template>
   <section class="why-choose-us">
-    <img class="background_img" src="@/assets/images/ai-girl.png" />
-    <h2 class="section-title">A New Era of Skincare</h2>
-    <p class="features-description">
-      Go beyond traditional surface-level assessments with personalized
-      solutions that cater to every aspect of your skin's needs. Embrace a new
-      era of skincare, precisely tailored to your unique biological blueprint
-      and lifestyle.
-    </p>
-    <h3 class="section-subtitle">
-      The Most Comprehensive Skin Health Analysis
-    </h3>
-    <ul class="feature-list">
-      <li
-        v-for="(feature, index) in features"
-        :key="index"
-        class="feature-item"
-      >
-        <img
-          :src="getImageUrl(feature.imgsrc)"
-          alt="Feature Image"
-          class="feature-image"
-        />
+    <div class="content">
+      <!-- В зависимости от устройства показываем разные компоненты -->
+      <div v-if="isDesktop" class="text-content">
+        <!-- Текстовая часть слева для десктопа -->
+        <h2 class="section-title">A New Era of Skincare</h2>
+        <p class="features-description">
+          Go beyond traditional surface-level assessments with personalized
+          solutions that cater to every aspect of your skin's needs. Embrace a
+          new era of skincare, precisely tailored to your unique biological
+          blueprint and lifestyle.
+        </p>
+        <h3 class="section-subtitle">
+          The Most Comprehensive Skin Health Analysis
+        </h3>
+        <!-- Список первых четырех элементов -->
+        <ul class="feature-list main-features">
+          <li
+            v-for="(feature, index) in features.slice(0, 4)"
+            :key="index"
+            class="feature-item"
+          >
+            <img
+              :src="getImageUrl(feature.imgsrc)"
+              alt="Feature Image"
+              class="feature-image"
+            />
+            <div>
+              <h3 class="feature-title">{{ feature.title }}</h3>
+              <p class="feature-description">{{ feature.description }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-        <div>
-          <h3 class="feature-title">{{ feature.title }}</h3>
-          <p class="feature-description">{{ feature.description }}</p>
+      <!-- Изображение с дополнительными пунктами списка справа для десктопа -->
+      <div v-if="isDesktop" class="img-container">
+        <img
+          class="background_img"
+          src="@/assets/images/ai-girl.png"
+          alt="AI Girl Image"
+        />
+        <!-- Список двух оставшихся элементов под изображением -->
+        <ul class="feature-list extra-features">
+          <li
+            v-for="(feature, index) in features.slice(4)"
+            :key="index + 4"
+            class="feature-item"
+          >
+            <img
+              :src="getImageUrl(feature.imgsrc)"
+              alt="Feature Image"
+              class="feature-image"
+            />
+            <div>
+              <h3 class="feature-title">{{ feature.title }}</h3>
+              <p class="feature-description">{{ feature.description }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Мобильная версия: изображение наверху, текст и все пункты списка под ним -->
+      <div v-else>
+        <div class="img-container">
+          <img
+            class="background_img"
+            src="@/assets/images/ai-girl.png"
+            alt="AI Girl Image"
+          />
         </div>
-      </li>
-    </ul>
+        <div class="text-content">
+          <h2 class="section-title">A New Era of Skincare</h2>
+          <p class="features-description">
+            Go beyond traditional surface-level assessments with personalized
+            solutions that cater to every aspect of your skin's needs. Embrace a
+            new era of skincare, precisely tailored to your unique biological
+            blueprint and lifestyle.
+          </p>
+          <h3 class="section-subtitle">
+            The Most Comprehensive Skin Health Analysis
+          </h3>
+          <!-- Список всех элементов для мобильной версии -->
+          <ul class="feature-list">
+            <li
+              v-for="(feature, index) in features"
+              :key="index"
+              class="feature-item"
+            >
+              <img
+                :src="getImageUrl(feature.imgsrc)"
+                alt="Feature Image"
+                class="feature-image"
+              />
+              <div>
+                <h3 class="feature-title">{{ feature.title }}</h3>
+                <p class="feature-description">{{ feature.description }}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
 import { CheckIcon } from 'lucide-vue-next'
 
 const features = [
@@ -74,55 +148,94 @@ const features = [
   },
 ]
 
-// Функция для получения URL-адреса изображения
 const getImageUrl = path => new URL(path, import.meta.url).href
+
+// Определяем, является ли устройство десктопом
+const isDesktop = ref(window.innerWidth > 900)
+
+const handleResize = () => {
+  isDesktop.value = window.innerWidth > 900
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+})
 </script>
 
 <style scoped>
+/* Общие стили */
 .why-choose-us {
   margin-bottom: 40px;
 }
-
-.feature-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.feature-item {
+.content {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.feature-image {
-  width: 50px; /* Установите размер изображения */
-  height: auto;
-  margin-right: 12px;
+/* Мобильные стили */
+@media screen and (max-width: 900px) {
+  .background_img {
+    width: 90vw;
+    height: 80vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .feature-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+  .feature-item {
+    display: flex; /* Выстраиваем изображение и текст в строку */
+    align-items: center; /* Центрируем элементы по вертикали */
+    margin-bottom: 20px;
+  }
+  .feature-image {
+    width: 50px;
+    height: auto;
+    margin-right: 12px;
+  }
 }
 
-.feature-icon {
-  width: 24px;
-  height: 24px;
-  color: var(--primary-color);
-  margin-right: 12px;
-  flex-shrink: 0;
-}
+/* Десктопные стили */
+@media screen and (min-width: 901px) {
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 
-.feature-title {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
+  .text-content {
+    width: 50%;
+    padding-right: 20px;
+  }
 
-.feature-description {
-  font-size: 14px;
-  color: var(--text-light);
-}
+  .img-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.background_img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
+  .background_img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .main-features {
+    margin-bottom: 20px;
+  }
+
+  .extra-features {
+    margin-top: 20px;
+  }
 }
 </style>

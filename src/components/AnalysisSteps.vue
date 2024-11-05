@@ -6,7 +6,6 @@
     <button class="btn btn-primary">Analyze My Skin Now</button>
     <p class="steps-description">Instant skin analysis in just a few steps</p>
   </section>
-  <img class="background_img" src="@/assets/images/shape-future.png/" />
 </template>
 
 <style scoped>
@@ -14,16 +13,13 @@
   margin-bottom: 40px;
 }
 
+.section-title {
+  font-size: large;
+}
+
 .steps-description {
   font-size: 14px;
   color: var(--text-light);
   margin-top: 16px;
-}
-
-.background_img {
-  width: 100%;
-
-  background-size: cover;
-  background-position: center;
 }
 </style>
