@@ -2,26 +2,6 @@
 
 The GlowSkin Project is a skincare-focused web application designed to provide personalized skincare recommendations and analysis. The main page of the site is composed of several components, each serving a specific purpose in guiding users and providing information about the project. Below is an overview of the key components used to build the main page, including a brief description of each component's purpose and structure.
 
-## Project structure
-
-glowskin-mobile-app/
-├── public/
-│   └── index.html               # Main HTML file
-├── src/
-│   ├── assets/                  # Static assets (images, fonts, etc.)
-│   ├── components/              # Reusable Vue components
-│   ├── layouts/                 # Layout components (e.g., Header, Footer)
-│   ├── pages/                   # Page components (each page of the app)
-│   ├── router/                  # Router configuration
-│   ├── store/                   # Vuex store (state management)
-│   ├── App.vue                  # Main app component
-│   ├── main.js                  # App entry file
-│   └── styles/                  # Global CSS and styling files
-├── package.json                 # Project configuration and dependencies
-└── README.md                    # Project documentation
-
-
-
 
 #Components Overview
 The components are located in the /components/ directory and are organized to enhance the modularity and readability of the application. Each component is responsible for a specific section of the page, contributing to the overall layout and flow.
