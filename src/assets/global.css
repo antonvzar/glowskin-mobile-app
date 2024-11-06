@@ -65,7 +65,7 @@ body {
   margin-bottom: 1.875rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .container {
     padding: 0 2rem;
   }

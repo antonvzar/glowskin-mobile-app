@@ -4,7 +4,7 @@
     <img
       v-if="!isDesktop"
       class="mobile-background-img"
-      src="@/assets/images/shape-future.png"
+      src="@/assets/images/shape-future.svg"
       alt="Background Image"
     />
 
@@ -135,7 +135,7 @@ onUnmounted(() => {
 /* Десктопная версия */
 @media screen and (min-width: 901px) {
   .container {
-    background-image: url('@/assets/images/shape-future.png');
+    background-image: url('@/assets/images/shape-future.svg');
     background-size: cover;
     background-position: center;
     display: flex;

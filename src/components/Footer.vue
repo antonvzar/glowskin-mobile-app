@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-logo">
         <img
-          src="@/assets/images/GP-logo-Skin.png"
+          src="@/assets/images/GP-logo-Skin.svg"
           alt="Project Glow Skin Logo"
         />
       </div>
@@ -16,10 +16,10 @@
       </nav>
 
       <div class="social-icons">
-        <img src="@/assets/images/facebook.png" class="social-icon" />
-        <img src="@/assets/images/instagram.png" class="social-icon" />
-        <img src="@/assets/images/x.png" class="social-icon" />
-        <img src="@/assets/images/tik_tok.png" class="social-icon" />
+        <img src="@/assets/images/facebook.svg" class="social-icon" />
+        <img src="@/assets/images/instagram.svg" class="social-icon" />
+        <img src="@/assets/images/x.svg" class="social-icon" />
+        <img src="@/assets/images/tik_tok.svg" class="social-icon" />
       </div>
 
       <div class="copyright">
@@ -39,61 +39,12 @@
   position: relative;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  margin-bottom: 50px;
-}
-
-/* Логотип */
-.footer-logo {
-  position: absolute;
-  top: 0px;
-  left: 40px;
-}
-
-.footer-logo img {
-  width: 150px;
-  position: absolute;
-  top: 0px;
-}
-
-/* Навигация */
-.footer-nav {
-  display: flex;
-  gap: 16px;
-  position: absolute;
-  top: 0px;
-  right: 40px;
-}
-
 .footer-link {
   color: #000000;
   text-decoration: none;
   font-size: 14px;
 }
 
-.footer-link:hover {
-  text-decoration: underline;
-}
-
-/* Социальные иконки */
-.social-icons {
-  display: flex;
-  gap: 20px;
-  position: absolute;
-  top: 70px;
-  right: 40px;
-}
-
-.social-icon {
-  width: 24px;
-  height: 24px;
-}
-
-/* Авторские права */
 .copyright {
   position: absolute;
   top: 75px;
@@ -103,9 +54,60 @@
   text-align: left;
 }
 
+@media screen and (min-width: 901px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 50px;
+  }
+
+  /* Логотип */
+  .footer-logo {
+    position: absolute;
+    top: 0px;
+    left: 40px;
+  }
+
+  .footer-logo img {
+    width: 150px;
+    position: absolute;
+    top: 0px;
+  }
+
+  /* Навигация */
+  .footer-nav {
+    display: flex;
+    gap: 16px;
+    position: absolute;
+    top: 0px;
+    right: 40px;
+  }
+
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+  }
+
+  .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Авторские права */
+}
 /* Стили для мобильной версии */
 @media screen and (max-width: 900px) {
   .container {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -116,6 +118,7 @@
   }
 
   .footer-nav {
+    display: flex;
     position: static;
     flex-direction: column;
     align-items: center;
@@ -127,8 +130,9 @@
   }
 
   .social-icons {
-    position: fixed;
-    bottom: 0px;
+    display: flex;
+    position: absolute;
+    bottom: 6vh;
     justify-content: center;
     gap: 20px;
     margin: 16px 0;
@@ -137,7 +141,7 @@
   .copyright {
     position: static;
     text-align: center;
-    margin-top: 16px;
+    margin-top: 10vh;
   }
 }
 </style>

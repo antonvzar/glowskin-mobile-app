@@ -39,7 +39,7 @@
   .img-container {
     width: 90vw;
     height: 80vw;
-    background-image: url('@/assets/images/girl-in-circle.png');
+    background-image: url('@/assets/images/girl-in-circle.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -71,7 +71,7 @@
   .img-container {
     width: 57vh;
     height: 50vh;
-    background-image: url('@/assets/images/girl-in-circle.png');
+    background-image: url('@/assets/images/girl-in-circle.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

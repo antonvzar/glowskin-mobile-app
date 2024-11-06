@@ -4,7 +4,7 @@
       <div class="image-container">
         <img
           style="width: 50%"
-          src="@/assets/images/GP-logo-Skin.png"
+          src="@/assets/images/GP-logo-Skin.svg"
           alt="Clickable Image"
           @click="handleClick"
         />

@@ -2,7 +2,7 @@
   <section class="features">
     <div class="desktop-layout" v-if="isDesktop">
       <!-- Левая часть с изображением -->
-      <img class="img-container" src="@/assets/images/ai-girl-2.png" />
+      <img class="img-container" src="@/assets/images/ai-girl-2.svg" />
 
       <!-- Правая часть с текстом и колонками -->
       <div class="text-content">
@@ -16,7 +16,7 @@
 
         <div class="column-container">
           <div class="column">
-            <img class="feature-image" src="@/assets/images/honeycomb.png" />
+            <img class="feature-image" src="@/assets/images/honeycomb.svg" />
             <div>
               <h3 class="feature-title">Ingredient-Led Solutions</h3>
               <p class="feature-description">
@@ -28,7 +28,7 @@
           </div>
 
           <div class="column">
-            <img class="feature-image" src="@/assets/images/unbiased.png" />
+            <img class="feature-image" src="@/assets/images/unbiased.svg" />
             <div>
               <h3 class="feature-title">Unbiased, Factual Data</h3>
               <p class="feature-description">
@@ -49,7 +49,7 @@
 
         <div class="column-container">
           <div class="column">
-            <img class="feature-image" src="@/assets/images/skincare.png" />
+            <img class="feature-image" src="@/assets/images/skincare.svg" />
             <div>
               <h3 class="feature-title">Tailored Product Suggestions</h3>
               <p class="feature-description">
@@ -62,7 +62,7 @@
           <div class="column">
             <img
               class="feature-image"
-              src="@/assets/images/shopping-cart.png"
+              src="@/assets/images/shopping-cart.svg"
             />
             <div>
               <h3 class="feature-title">Marketplace Integration</h3>
@@ -79,7 +79,7 @@
 
     <!-- Мобильная версия с последовательным отображением и центрированием текста -->
     <div v-else>
-      <img class="img-container" src="@/assets/images/ai-girl-2.png" />
+      <img class="img-container" src="@/assets/images/ai-girl-2.svg" />
 
       <!-- Первый блок для мобильной версии -->
       <h2 class="section-title text-center">
@@ -92,7 +92,7 @@
       </p>
 
       <div class="feature-item">
-        <img class="feature-image" src="@/assets/images/honeycomb.png" />
+        <img class="feature-image" src="@/assets/images/honeycomb.svg" />
         <div>
           <h3 class="feature-title">Ingredient-Led Solutions</h3>
           <p class="feature-description">
@@ -103,7 +103,7 @@
       </div>
 
       <div class="feature-item">
-        <img class="feature-image" src="@/assets/images/unbiased.png" />
+        <img class="feature-image" src="@/assets/images/unbiased.svg" />
         <div>
           <h3 class="feature-title">Unbiased, Factual Data</h3>
           <p class="feature-description">
@@ -122,7 +122,7 @@
       </p>
 
       <div class="feature-item">
-        <img class="feature-image" src="@/assets/images/skincare.png" />
+        <img class="feature-image" src="@/assets/images/skincare.svg" />
         <div>
           <h3 class="feature-title">Tailored Product Suggestions</h3>
           <p class="feature-description">
@@ -133,7 +133,7 @@
       </div>
 
       <div class="feature-item">
-        <img class="feature-image" src="@/assets/images/shopping-cart.png" />
+        <img class="feature-image" src="@/assets/images/shopping-cart.svg" />
         <div>
           <h3 class="feature-title">Marketplace Integration</h3>
           <p class="feature-description">
@@ -239,8 +239,8 @@ onUnmounted(() => {
   }
 
   .feature-image {
-    width: 20%;
-    margin-right: 15px;
+    width: 10vw;
+    margin-right: 2vw;
   }
 }
 </style>

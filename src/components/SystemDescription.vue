@@ -1,9 +1,8 @@
 <template>
   <section class="why-choose-us">
     <div class="content">
-      <!-- В зависимости от устройства показываем разные компоненты -->
+      <!-- Desktop version content -->
       <div v-if="isDesktop" class="text-content">
-        <!-- Текстовая часть слева для десктопа -->
         <h2 class="section-title">A New Era of Skincare</h2>
         <p class="features-description">
           Go beyond traditional surface-level assessments with personalized
@@ -11,10 +10,11 @@
           new era of skincare, precisely tailored to your unique biological
           blueprint and lifestyle.
         </p>
+
         <h3 class="section-subtitle">
           The Most Comprehensive Skin Health Analysis
         </h3>
-        <!-- Список первых четырех элементов -->
+
         <ul class="feature-list main-features">
           <li
             v-for="(feature, index) in features.slice(0, 4)"
@@ -22,26 +22,27 @@
             class="feature-item"
           >
             <img
-              :src="getImageUrl(feature.imgsrc)"
+              :src="feature.imgsrc"
               alt="Feature Image"
               class="feature-image"
             />
             <div>
-              <h3 class="feature-title">{{ feature.title }}</h3>
+              <h3 class="feature-title" style="font-weight: bold">
+                {{ feature.title }}
+              </h3>
               <p class="feature-description">{{ feature.description }}</p>
             </div>
           </li>
         </ul>
       </div>
 
-      <!-- Изображение с дополнительными пунктами списка справа для десктопа -->
+      <!-- Desktop additional features on the right -->
       <div v-if="isDesktop" class="img-container">
         <img
           class="background_img"
-          src="@/assets/images/ai-girl.png"
+          src="@/assets/images/ai-girl.svg"
           alt="AI Girl Image"
         />
-        <!-- Список двух оставшихся элементов под изображением -->
         <ul class="feature-list extra-features">
           <li
             v-for="(feature, index) in features.slice(4)"
@@ -49,24 +50,26 @@
             class="feature-item"
           >
             <img
-              :src="getImageUrl(feature.imgsrc)"
+              :src="feature.imgsrc"
               alt="Feature Image"
               class="feature-image"
             />
             <div>
-              <h3 class="feature-title">{{ feature.title }}</h3>
+              <h3 class="feature-title" style="font-weight: bold">
+                {{ feature.title }}
+              </h3>
               <p class="feature-description">{{ feature.description }}</p>
             </div>
           </li>
         </ul>
       </div>
 
-      <!-- Мобильная версия: изображение наверху, текст и все пункты списка под ним -->
+      <!-- Mobile version content -->
       <div v-else>
         <div class="img-container">
           <img
             class="background_img"
-            src="@/assets/images/ai-girl.png"
+            src="@/assets/images/ai-girl.svg"
             alt="AI Girl Image"
           />
         </div>
@@ -81,7 +84,6 @@
           <h3 class="section-subtitle">
             The Most Comprehensive Skin Health Analysis
           </h3>
-          <!-- Список всех элементов для мобильной версии -->
           <ul class="feature-list">
             <li
               v-for="(feature, index) in features"
@@ -89,12 +91,14 @@
               class="feature-item"
             >
               <img
-                :src="getImageUrl(feature.imgsrc)"
+                :src="feature.imgsrc"
                 alt="Feature Image"
                 class="feature-image"
               />
               <div>
-                <h3 class="feature-title">{{ feature.title }}</h3>
+                <h3 class="feature-title" style="font-weight: bold">
+                  {{ feature.title }}
+                </h3>
                 <p class="feature-description">{{ feature.description }}</p>
               </div>
             </li>
@@ -107,50 +111,53 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { CheckIcon } from 'lucide-vue-next'
+import analysingImg from '@/assets/images/analysing.svg'
+import faceRecognitionImg from '@/assets/images/face-recognition.svg'
+import profileImg from '@/assets/images/profile.svg'
+import dnaImg from '@/assets/images/dna.svg'
+import metricsImg from '@/assets/images/metrics.svg'
+import insuranceImg from '@/assets/images/insurance.svg'
 
 const features = [
   {
-    imgsrc: '@/assets/images/analysing.png',
+    imgsrc: analysingImg,
     title: 'Extensively Trained',
     description:
       'Our technology has been trained on a diverse dataset of 100,000+ images to ensure high accuracy and reliability.',
   },
   {
-    imgsrc: '@/assets/images/face-recognition.png',
+    imgsrc: faceRecognitionImg,
     title: 'Image Recognition and Analysis',
     description:
       'Simply upload a selfie and our AI will instantly begin its detailed assessment, identifying and addressing key areas of concern with remarkable accuracy.',
   },
   {
-    imgsrc: '@/assets/images/profile.png',
+    imgsrc: profileImg,
     title: 'Personalised Recommendations',
     description:
       "Sophisticated algorithms deliver precise product suggestions tailored to your skin's specific needs.",
   },
   {
-    imgsrc: '@/assets/images/dna.png',
+    imgsrc: dnaImg,
     title: 'Upload DNA Report',
     description:
       'Integrate genetic insights by uploading your DNA report, allowing us to refine your skincare recommendations based on your genetic predispositions.',
   },
   {
-    imgsrc: '@/assets/images/metrics.png',
+    imgsrc: metricsImg,
     title: 'Comprehensive Metrics',
     description:
       'We analyze crucial skin health indicators, ensuring our recommendations are both accurate and beneficial.',
   },
   {
-    imgsrc: '@/assets/images/insurance.png',
+    imgsrc: insuranceImg,
     title: 'Upload Health Reports and Blood Work',
     description:
       'Further personalize your skincare by providing health reports and blood work, enabling our AI to consider your overall health in its analysis.',
   },
 ]
 
-const getImageUrl = path => new URL(path, import.meta.url).href
-
-// Определяем, является ли устройство десктопом
+// Detect if the device is a desktop
 const isDesktop = ref(window.innerWidth > 900)
 
 const handleResize = () => {
@@ -177,6 +184,24 @@ onUnmounted(() => {
   align-items: center;
 }
 
+/* Remove bullets and align items horizontally */
+.feature-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.feature-image {
+  width: 50px;
+  height: auto;
+  margin-right: 12px;
+}
+
 /* Мобильные стили */
 @media screen and (max-width: 900px) {
   .background_img {
@@ -187,20 +212,10 @@ onUnmounted(() => {
     background-repeat: no-repeat;
   }
 
-  .feature-list {
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-  }
   .feature-item {
-    display: flex; /* Выстраиваем изображение и текст в строку */
-    align-items: center; /* Центрируем элементы по вертикали */
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
-  }
-  .feature-image {
-    width: 50px;
-    height: auto;
-    margin-right: 12px;
   }
 }
 
