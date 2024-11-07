@@ -4,31 +4,34 @@ This template should help get you started developing with Vue 3 in Vite.
 
 ## Project structure
 
-glowskin-mobile-app/
-├── public/
-│   └── index.html               # Main HTML file, where the Vue app is mounted
-├── src/
-│   ├── assets/                  # Static assets (images, fonts, etc.)
-│   │   ├── images/              # Image assets for the project
-│   │   └── fonts/               # Font files if custom fonts are used in the project
-│   ├── components/              # Reusable Vue components
-│   │   ├── Header.vue           # Header component containing navigation links
-│   │   ├── HeroSection.vue      # Introducing the GlowSkin Project
-│   │   ├── SystemDescription.vue # Description of GlowSkin’s system capabilities
-│   │   ├── SuggestionSection.vue # Describing what system could suggest you after the analysis
-│   │   ├── WhyChooseUs.vue      # Section outlining reasons to choose GlowSkin
-│   │   ├── AnalysisSteps.vue    # Link to skin analysis
-│   │   ├── CommunitySection.vue # Contains subscription form and privacy notice
-│   │   ├── Footer.vue           # Footer component with links and social media icons
-│   └── router/                  # Router configuration for page navigation
-│   |    └── index.js             # Defines routes
-│   ├── stores/                   # Vuex store for global state management
-│   │   ├── index.js             # Main store setup file
-│   │   ├── modules/             # Modular Vuex store organization
-│   ├── App.vue                  # Root Vue component that hosts the main layout
-│   └──  main.js                  # Main entry file where the Vue app is initialized
-├── package.json                 # Project configuration, scripts, and dependencies
-└── README.md                    # Documentation file outlining project setup, usage, and structure
+
+---
+
+## Directory Details
+
+- **`src/`**: Contains the core application files.
+  - **`assets/`**: Static assets such as images and fonts.
+    - `images/`: Contains images for various sections and icons.
+    - `fonts/`: Holds font files used across the application.
+  - **`components/`**: Contains reusable Vue components.
+    - `Header.vue`: Header component containing navigation links.
+    - `HeroSection.vue`: Introduces the GlowSkin Project with a brief overview.
+    - `SystemDescription.vue`: Describes the capabilities of the GlowSkin system.
+    - `SuggestionSection.vue`: Outlines system recommendations based on user analysis.
+    - `WhyChooseUs.vue`: Highlights reasons to choose the GlowSkin system.
+    - `AnalysisSteps.vue`: Guides users to start a skin analysis.
+    - `CommunitySection.vue`: Provides contact and subscription options.
+    - `Footer.vue`: Contains footer links and social media icons.
+  - **`router/`**: Sets up routing for different pages within the application.
+    - `index.js`: Defines and configures routes.
+  - **`store/`**: Vuex store configuration for state management.
+    - `index.js`: Sets up the main Vuex store.
+    - `modules/`: Contains modular Vuex store configurations for different sections.
+  - **`App.vue`**: The root Vue component, hosting the main layout.
+  - **`main.js`**: Entry file that initializes the Vue app, configuring the store and router.
+- **`package.json`**: Lists dependencies, scripts, and project metadata.
+- **`README.md`**: Documentation for project setup, usage, and structure.
+- **`index.html`**: Serves as the main HTML file where the Vue application is mounted
 
 
 
