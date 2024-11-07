@@ -206,7 +206,7 @@ onUnmounted(() => {
 @media screen and (max-width: 900px) {
   .background_img {
     width: 90vw;
-    height: 80vw;
+    height: 75.56vw;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

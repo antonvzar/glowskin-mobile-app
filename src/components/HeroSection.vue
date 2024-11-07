@@ -9,7 +9,8 @@
           Our AI-powered analysis reveals what your skin truly needs to look and
           feel its best.
         </p>
-        <button class="btn-primary">Your Free Skin Analysis Now</button>
+        <button class="btn btn-primary">Your Free Skin Analysis Now</button>
+        <div style="margin-bottom: 10px"></div>
         <p class="secure-note">Receive Personalized Recommendations</p>
         <p class="secure-note">100% Secure & Private</p>
       </section>
@@ -31,13 +32,15 @@
   gap: 20px;
 }
 
+
+
 @media screen and (max-width: 900px) {
   .content-wrapper {
     flex-direction: column;
   }
 
   .img-container {
-    width: 90vw;
+    width: 92.59vw;
     height: 80vw;
     background-image: url('@/assets/images/girl-in-circle.svg');
     background-size: cover;
