@@ -65,6 +65,13 @@
 }
 
 @media screen and (min-width: 901px) {
+  .contain-background {
+    background: linear-gradient(89.97deg, #f4f7f2 0.04%, #ffffff 99.98%);
+    padding: 20px;
+    /* padding-left: 15vh;
+    padding-right: 15vh; */
+  }
+
   .content-wrapper {
     flex-direction: row;
     align-items: center;

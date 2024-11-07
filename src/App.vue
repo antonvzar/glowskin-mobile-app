@@ -27,7 +27,7 @@ import WhyChooseUs from './components/WhyChooseUs.vue'
 <style>
 @import './assets/global.css';
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .app {
     min-height: 100vh;
     display: flex;
@@ -45,7 +45,7 @@ import WhyChooseUs from './components/WhyChooseUs.vue'
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 901px) {
   .container {
     margin: 0 auto;
   }
