@@ -180,6 +180,10 @@ onUnmounted(() => {
 
 /* Десктопная версия */
 @media screen and (min-width: 901px) {
+  .features {
+    padding-left: 17vh;
+    padding-right: 17vh;
+  }
   .desktop-layout {
     display: flex;
     flex-direction: row;

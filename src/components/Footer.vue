@@ -55,6 +55,10 @@
 }
 
 @media screen and (min-width: 901px) {
+  .footer {
+    padding-left: 17vh;
+    padding-right: 17vh;
+  }
   .container {
     display: flex;
     flex-direction: column;

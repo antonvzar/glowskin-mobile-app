@@ -143,6 +143,8 @@ onUnmounted(() => {
     justify-content: center;
     padding: 40px;
     height: 100vh;
+    padding-left: 17vh;
+    padding-right: 17vh;
   }
 
   .content {

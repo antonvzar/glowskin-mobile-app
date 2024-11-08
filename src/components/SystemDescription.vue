@@ -221,10 +221,10 @@ onUnmounted(() => {
 
 /* Десктопные стили */
 @media screen and (min-width: 901px) {
-  /* .why-choose-us {
-    padding-left: 15vh;
-    padding-right: 15vh;
-  } */
+  .why-choose-us {
+    padding-left: 17vh;
+    padding-right: 17vh;
+  }
 
   .content {
     flex-direction: row;

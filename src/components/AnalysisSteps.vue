@@ -11,6 +11,8 @@
 <style scoped>
 .analysis-steps {
   margin-bottom: 40px;
+  padding-left: 17vh;
+  padding-right: 17vh;
 }
 
 .section-title {

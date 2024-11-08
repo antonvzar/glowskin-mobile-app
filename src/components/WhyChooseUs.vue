@@ -98,6 +98,10 @@ onUnmounted(() => {
 
 /* Десктопная версия */
 @media screen and (min-width: 901px) {
+  .container {
+    padding-left: 17vh;
+    padding-right: 17vh;
+  }
   .desktop-borders {
     display: flex;
     justify-content: space-around;
